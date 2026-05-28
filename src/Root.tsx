@@ -2,6 +2,7 @@ import { Composition } from "remotion";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
 import { AdsScore, adsScoreSchema } from "./AdsScore";
+import { AdsScoreAnimated, adsScoreAnimatedSchema, TOTAL_FRAMES } from "./AdsScoreAnimated";
 import { CardReveal, cardRevealSchema } from "./CardReveal";
 import { WorkflowPipeline, workflowSchema } from "./WorkflowPipeline";
 import { KineticType, kineticTypeSchema } from "./KineticType";
@@ -30,6 +31,24 @@ export const RemotionRoot: React.FC = () => {
           titleColor: "#000000",
           logoColor1: "#91EAE4",
           logoColor2: "#86A8E7",
+        }}
+      />
+
+      <Composition
+        id="AdsScoreAnimated"
+        component={AdsScoreAnimated}
+        durationInFrames={TOTAL_FRAMES}
+        fps={30}
+        width={1080}
+        height={1920}
+        schema={adsScoreAnimatedSchema}
+        defaultProps={{
+          hookText: "#1 TRUTHMODE",
+          hookScore: 8.5,
+          scrollStopScore: 9,
+          ctaScore: 5.5,
+          retentionScore: 7,
+          recommendation: "Strong hook and pattern interrupt. Add a clear CTA in the first 3 seconds to lift conversions.",
         }}
       />
 
