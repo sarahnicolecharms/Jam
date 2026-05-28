@@ -1,6 +1,7 @@
 import { Composition } from "remotion";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
+import { CardReveal, cardRevealSchema } from "./CardReveal";
 import { KineticType, kineticTypeSchema } from "./KineticType";
 import { QuoteOverlay, quoteOverlaySchema } from "./QuoteOverlay";
 import { TextReveal, textRevealSchema } from "./TextReveal";
@@ -27,6 +28,24 @@ export const RemotionRoot: React.FC = () => {
           titleColor: "#000000",
           logoColor1: "#91EAE4",
           logoColor2: "#86A8E7",
+        }}
+      />
+
+      <Composition
+        id="CardReveal"
+        component={CardReveal}
+        durationInFrames={240}
+        fps={30}
+        width={1080}
+        height={1920}
+        schema={cardRevealSchema}
+        defaultProps={{
+          brandName: "AnimStats",
+          tagline: "New Collab",
+          icon1Initial: "A",
+          icon2Initial: "S",
+          icon1Color: "#7C5CBF",
+          icon2Color: "#E8708A",
         }}
       />
 
