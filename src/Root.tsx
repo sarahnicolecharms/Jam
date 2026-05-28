@@ -1,6 +1,8 @@
 import { Composition } from "remotion";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
+import { KineticType, kineticTypeSchema } from "./KineticType";
+import { QuoteOverlay, quoteOverlaySchema } from "./QuoteOverlay";
 import { TextReveal, textRevealSchema } from "./TextReveal";
 
 // Each <Composition> is an entry in the sidebar!
@@ -25,6 +27,36 @@ export const RemotionRoot: React.FC = () => {
           titleColor: "#000000",
           logoColor1: "#91EAE4",
           logoColor2: "#86A8E7",
+        }}
+      />
+
+      <Composition
+        id="KineticType"
+        component={KineticType}
+        durationInFrames={260}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={kineticTypeSchema}
+        defaultProps={{
+          line1: "THE LIGHT",
+          line2: "that never fades",
+          line3: "ENDURES.",
+          accentColor: "#D4AF7A",
+        }}
+      />
+
+      <Composition
+        id="QuoteOverlay"
+        component={QuoteOverlay}
+        durationInFrames={240}
+        fps={30}
+        width={1080}
+        height={1920}
+        schema={quoteOverlaySchema}
+        defaultProps={{
+          textColor: "#ffffff",
+          backgroundColor: "#111111",
         }}
       />
 
