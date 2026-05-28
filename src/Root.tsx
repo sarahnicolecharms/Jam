@@ -2,6 +2,7 @@ import { Composition } from "remotion";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
 import { CardReveal, cardRevealSchema } from "./CardReveal";
+import { WorkflowPipeline, workflowSchema } from "./WorkflowPipeline";
 import { KineticType, kineticTypeSchema } from "./KineticType";
 import { QuoteOverlay, quoteOverlaySchema } from "./QuoteOverlay";
 import { TextReveal, textRevealSchema } from "./TextReveal";
@@ -28,6 +29,25 @@ export const RemotionRoot: React.FC = () => {
           titleColor: "#000000",
           logoColor1: "#91EAE4",
           logoColor2: "#86A8E7",
+        }}
+      />
+
+      <Composition
+        id="WorkflowPipeline"
+        component={WorkflowPipeline}
+        durationInFrames={240}
+        fps={30}
+        width={1080}
+        height={1920}
+        schema={workflowSchema}
+        defaultProps={{
+          title: "AI Script Workflow",
+          step1: "TikTok transcript",
+          step2: "Claude analyzes hook",
+          step3: "Claude rewrites stronger hook",
+          step4: "Generate CTA",
+          step5: "Export script",
+          accentColor: "#CC785C",
         }}
       />
 
